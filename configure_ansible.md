@@ -5,7 +5,7 @@
 1. You have a running Debian Linux docker container named `debian_linux`
 2. You are either SSH'd into the container or have `docker exec` into the container
 3. The container mounts a local `.\srv` directory to the container's `/srv` directory
-  * `/srv/web` exists and is empty (or content can be overwritten)
+  * `/srv/ansible` exists and is empty (or content can be overwritten)
 4. SSH Keys and GPG Keys have been setup in GitHub
 
 ## Setup the layout for Ansible
