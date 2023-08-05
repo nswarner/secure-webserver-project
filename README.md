@@ -89,7 +89,7 @@ Note: Alternatively, you can sign with a pre-existing SSH Key, but it's good to 
   - The navigation on each page should reference the `index.html`, `about.html`, and `content.html` pages
   - The content page should have placeholders for images in the body of the page
     - Replace the image placeholders with actual images saved to `./web/images/<imagename[].png>`
-2. Ensure that you Git `add`, `commit`, and `push, all files to your GitHub repository
+2. Ensure that you Git `add`, `commit`, and `push`, all files to your GitHub repository
 
 # Tasks - Configuring Ansible
 
@@ -115,7 +115,7 @@ Note: Alternatively, you can sign with a pre-existing SSH Key, but it's good to 
   - It will have a group for `certificates` with the `rootca` container in it
   - You will find the `nginx` container IP and create an entry for `nginx <ip>`
   - You will find the `rootca` container IP and create an entry for `rootca <ip>`
-4. Ensure that you Git `add`, `commit`, and `push, all files to your GitHub repository
+4. Ensure that you Git `add`, `commit`, and `push`, all files to your GitHub repository
 
 # Tasks - Create running containers to run the website and root CA server
 
@@ -140,4 +140,4 @@ In a new Powershell window with Notepad++,
   * Ansible server:
     * Mount local directory (`./ansible`) to remote directory (`/ansible`)
 3. Name each container `nginx`, `rootca`, and `ansible` respectively
-4. Ensure that you Git `add`, `commit`, and `push, the docker-compose file to your GitHub repository
+4. Ensure that you Git `add`, `commit`, and `push`, the docker-compose file to your GitHub repository
