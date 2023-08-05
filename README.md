@@ -28,8 +28,6 @@ Get-Content sleeper.sh -raw | % {$_ -replace "`r", ""} | Set-Content -NoNewline 
 
 1. In Powershell, c&p `docker run --name debian_linux -v .\:/srv/ --entrypoint /srv/sleeper_linux.sh --rm -d debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
-1. In Powershell, c&p `docker run --name debian_linux -v ./sleeper.sh:/srv/sleeper.sh --entrypoint /srv/sleeper.sh --rm -d debian:latest`
-  * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'
 3. Copy the `.pub` public key
 4. In GitHub, in your Profile, under Security/SSH, enter the public SSH Key
