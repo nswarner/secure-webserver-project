@@ -6,31 +6,30 @@
 
 * Install "Docker Desktop" on your local computer
 * Install "Notepad++" on your local computer
-Expand
-message.txt
-6 KB
-﻿
-# Tasks:
-
-## Prework
-
-* Install "Docker Desktop" on your local computer
-* Install "Notepad++" on your local computer
 * Pin both to your Taskbar
 * Pin "Powershell" to your Taskbar
 * Log into "GitHub"
 
 ## Configuring for GitHub connectivity, setting up local environment
 
+Create a file, `./sleeper.sh`,
+
+```bash
+#!/usr/bin/env bash
+
+/usr/bin/sleep 28800
+```
+
 1. In Powershell, c&p `docker run --name debian_linux --rm debian:latest`
+1. In Powershell, c&p `docker run --name debian_linux -v ./sleeper.sh:/srv/sleeper.sh --entrypoint /srv/sleeper.sh --rm -d debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'
 3. Copy the `.pub` public key
 4. In GitHub, in your Profile, under Security/SSH, enter the public SSH Key
 5. In GitHub, create a new repository
 6. In the Debian container (step #1), clone the new repository via SSH
-  * `git clone <>`
-7. `cd <directory>` of the cloned repository
+  * `git clone \<\>`
+7. `cd \<directory\>` of the cloned repository
 8. Create local directories `./web`, `./certs`, and `./ansible`
 9. Create a placeholder file in each directory
   * `touch ./web/placeholder`
@@ -48,7 +47,7 @@ message.txt
   - Each page should share an overall CSS theme but have some unique styles
   - The navigation on each page should reference the `index.html`, `about.html`, and `content.html` pages
   - The content page should have placeholders for images in the body of the page
-    - Replace the image placeholders with actual images saved to `./web/images/<imagename[].png>`
+    - Replace the image placeholders with actual images saved to `./web/images/\<imagename\[\].png\>`
 2. Ensure that you Git `add`, `commit`, and `push, all files to your GitHub repository
 
 ## Setting up the local development environment
@@ -76,7 +75,7 @@ message.txt
 
 1. Please create the layout for Ansible to use Playbooks, Roles, Variables, Vaults, and Inventories in the `./ansible` directory
   - Please create a placeholder in each of the directories if a file does not exist
-  - The `roles` directory should have two roles, `nginx_setup` and `root_ca_setup`
+  - The `roles` directory should have two roles, `nginx\_setup` and `root\_ca\_setup`
   - Each of these roles should have `tasks`, `files`, `templates`, and `handlers` as subdirectories
 2. Please create an Ansible playbook on your local computer, located in `./ansible/playbooks` directory, which has three roles; 
   - One sets up Nginx on port 8080 with a specified TLS certificate stored in `/cert` (this is a placeholder)
