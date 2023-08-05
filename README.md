@@ -16,7 +16,7 @@
 **SECURITY:** never share your private key with anyone
 
 1. In Powershell,
-  * Run `mkdir root`, `mkdir root/.ssh`, `mkdir /root/.gnupg`
+  * Run `mkdir root`, `mkdir root/.ssh`, `mkdir root/.gnupg`, `mkdir srv`
   * Run `docker run --name debian_linux --rm -itd -v .\srv:/srv -v .\root:/root debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 2. Run `apt update && apt install openssl openssh-client dos2unix procps gpg git`
