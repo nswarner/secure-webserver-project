@@ -1,10 +1,5 @@
 # secure-webserver-project
 
-Quartano
-quartano
-Online
-
-Quartano — Today at 10:19 AM
 # Tasks:
 
 ## Prework
