@@ -77,32 +77,6 @@ Note: Alternatively, you can sign with a pre-existing SSH Key, but it's good to 
 6. Git `add`, `commit`, and `push` the contents of `./web`, `./certs`, and `./ansible` directories
 7. Verify these have been pushed to the remote GitHub repository
 
-# Tasks - Configuring Ansible
-
-## Setup the layout for Ansible
-
-1. Please create the layout for Ansible to use Playbooks, Roles, Variables, Vaults, and Inventories in the `./ansible` directory
-  - Please create a placeholder in each of the directories if a file does not exist
-  - The `roles` directory should have two roles, `nginx_setup` and `root_ca_setup`
-  - Each of these roles should have `tasks`, `files`, `templates`, and `handlers` as subdirectories
-2. Please create an Ansible playbook on your local computer, located in `./ansible/playbooks` directory, which has three roles; 
-  - One sets up Nginx on port 8080 with a specified TLS certificate stored in `/cert` (this is a placeholder)
-    - You can either configure Nginx to set its web directory to `/srv` or
-    - You can copy the `/srv` directory website files to the Nginx web directory
-	- This will only run against the `nginx` host
-  - One creates a root certificate authority certificate (root CA), an intermediate CA certificate, and an end-entity certificate
-	- The end-entity certificate will be for `nginx.internaldns.com`
-	- This will only run against the `rootca` host
-  - One which determines the host operating system, hostname, IP, and list of installed packages
-    - This will display all of this information in a debug message
-	- This will run against all hosts
-3. Please create an inventory file with the following layout:
-  - It will have a group for `webservers` with the `nginx` container in it
-  - It will have a group for `certificates` with the `rootca` container in it
-  - You will find the `nginx` container IP and create an entry for `nginx <ip>`
-  - You will find the `rootca` container IP and create an entry for `rootca <ip>`
-4. Ensure that you Git `add`, `commit`, and `push`, all files to your GitHub repository
-
 # Tasks - Create running containers to run the website and root CA server
 
 ## Setting up the local environment
