@@ -12,7 +12,7 @@
 
 ## Configuring for GitHub connectivity, setting up local environment
 
-Create a file, `./sleeper.sh`,
+In Notepad++, create a file, `./sleeper.sh`,
 
 ```bash
 #!/usr/bin/env bash
@@ -20,6 +20,14 @@ Create a file, `./sleeper.sh`,
 /usr/bin/sleep 28800
 ```
 
+After saving the file, in Powershell, run the following command:
+
+```bash
+Get-Content sleeper.sh -raw | % {$_ -replace "`r", ""} | Set-Content -NoNewline sleeper_linux.sh
+````
+
+1. In Powershell, c&p `docker run --name debian_linux -v .\:/srv/ --entrypoint /srv/sleeper_linux.sh --rm -d debian:latest`
+  * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 1. In Powershell, c&p `docker run --name debian_linux -v ./sleeper.sh:/srv/sleeper.sh --entrypoint /srv/sleeper.sh --rm -d debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'
