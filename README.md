@@ -34,6 +34,7 @@
 ### GitHub signed commits by GPG Key
 
 Ref: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+
 Ref: https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account
 
 1. In the `debian_linux` container,
