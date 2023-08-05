@@ -14,8 +14,8 @@
 
 1. In Powershell, c&p `docker run --name debian_linux --rm -itd debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
-2. Run `apt update && apt install openssl`
-2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'
+2. Run `apt update && apt install openssl openssh-client dos2unix procps`
+2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'`
 3. Copy the `.pub` public key
 4. In GitHub, in your Profile, under Security/SSH, enter the public SSH Key
 5. In GitHub, create a new repository
