@@ -69,7 +69,7 @@ Note: Alternatively, you can sign with a pre-existing SSH Key, but it's good to 
 2. In the Debian container, clone the new repository via SSH
   * `cd /srv && git clone <ssh-url>`
 3. `cd <directory>` of the cloned repository (`ls` to see directories)
-4. Create local directories `./web`, `./certs`, and `./ansible`
+4. Create local directories `mkdir ./web`, `mkdir ./certs`, and `mkdir ./ansible`
 5. Create a placeholder file in each directory
   * `touch ./web/placeholder`
   * `touch ./certs/placeholder`
