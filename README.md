@@ -12,23 +12,34 @@
 
 ## Configuring for GitHub connectivity, setting up local environment
 
-1. In Powershell, c&p `docker run --name debian_linux --rm -itd debian:latest`
+**SECURITY:** never share your private key with anyone
+
+1. In Powershell,
+  * Run `mkdir root`, `mkdir ssh`
+  * Run `docker run --name debian_linux --rm -itd -v .\srv:/srv -v .\ssh:/root/.ssh debian:latest`
   * After the container is running, exec into the container, `docker exec -it debian_linux /bin/bash`
 2. Run `apt update && apt install openssl openssh-client dos2unix procps`
-2. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'`
-3. Copy the `.pub` public key
-4. In GitHub, in your Profile, under Security/SSH, enter the public SSH Key
-5. In GitHub, create a new repository
-6. In the Debian container (step #1), clone the new repository via SSH
-  * `git clone <>`
-7. `cd <directory>` of the cloned repository
-8. Create local directories `./web`, `./certs`, and `./ansible`
-9. Create a placeholder file in each directory
+3. Generate an SSH Keypair: `ssh-keygen -t ed25519 -C '<email>'`
+  * `Enter file in which to save the key (/root/.ssh/id_ed25519):` <-- press enter, leave it default
+    ** If it asks you if you want to overwrite, choose `n` and press enter
+  * `Enter passphrase (empty for no passphrase):` <-- enter a password (secret)
+  * `Enter same passphrase again:` <-- enter the same password (secret)
+  * **Your public key has been saved in /root/.ssh/id_ed25519.pub**
+  * **Your identification has been saved in /root/.ssh/id_ed25519** (private key)
+  * Run `cat ~/.ssh/id_ed25519.pub` to see your **public** key (`.pub`)
+4. Copy the `.pub` public key
+5. In GitHub, in your Profile, under Security/SSH, enter the public SSH Key
+6. In GitHub, create a new repository
+7. In the Debian container (step #1), clone the new repository via SSH
+  * `cd /srv && git clone <ssh-url>`
+8. `cd <directory>` of the cloned repository (`ls` to see directories)
+9. Create local directories `./web`, `./certs`, and `./ansible`
+10. Create a placeholder file in each directory
   * `touch ./web/placeholder`
   * `touch ./certs/placeholder`
   * `touch ./ansible/placeholder`
-10. Git `add`, `commit`, and `push` the contents of `./web`, `./certs`, and `./ansible` directories
-11. Verify these have been pushed to the remote GitHub repository
+11. Git `add`, `commit`, and `push` the contents of `./web`, `./certs`, and `./ansible` directories
+12. Verify these have been pushed to the remote GitHub repository
 
 ## Setting up a website
 
