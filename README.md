@@ -77,20 +77,6 @@ Note: Alternatively, you can sign with a pre-existing SSH Key, but it's good to 
 6. Git `add`, `commit`, and `push` the contents of `./web`, `./certs`, and `./ansible` directories
 7. Verify these have been pushed to the remote GitHub repository
 
-# Tasks - Building a website
-
-## Setting up a website
-
-1. Please create a simple three page website, with all files saved into the `./web` directory
-  - The index page will have a header, footer, left navigation, with each component having a different thematic style, store this file into `./web/index.html`
-  - The about us page will header a header, footer, left navigation, with each component having a different thematic style, store this file into `./web/about.html`
-  - The content page will header a header, footer, left navigation, with each component having a different thematic style, store this file into `./web/content.html`
-  - Each page should share an overall CSS theme but have some unique styles
-  - The navigation on each page should reference the `index.html`, `about.html`, and `content.html` pages
-  - The content page should have placeholders for images in the body of the page
-    - Replace the image placeholders with actual images saved to `./web/images/<imagename[].png>`
-2. Ensure that you Git `add`, `commit`, and `push`, all files to your GitHub repository
-
 # Tasks - Configuring Ansible
 
 ## Setup the layout for Ansible
