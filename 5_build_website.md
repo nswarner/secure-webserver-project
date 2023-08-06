@@ -1,6 +1,6 @@
 # Tasks - Building a website
 
-## Assumptions
+## Prerequisites / Dependencies / Assumptions
 
 1. You have a running Debian Linux docker container named `debian_linux`
 2. You are either SSH'd into the container or have `docker exec` into the container
