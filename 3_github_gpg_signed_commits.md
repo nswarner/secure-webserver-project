@@ -4,6 +4,14 @@ Ref: https://docs.github.com/en/authentication/managing-commit-signature-verific
 
 Ref: https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account
 
+**Note:** Please add `export GPG_TTY=$(tty)` to your `~/.bashrc` and paste this into your existing session. You will get an error message if you don't!!
+
+```bash
+root@513b9f5359d9:/srv/project_two_test_cat# git commit -m "Initial test commit."
+error: gpg failed to sign the data
+fatal: failed to write commit object
+```
+
 1. In the `debian_linux` container,
   * `gpg --full-generate-key` - generate a GPG Key
   * Selection 1: `RSA and RSA (default)`
